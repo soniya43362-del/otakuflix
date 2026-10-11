@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100d18">
+<title>OtakuFlix — Anime, on your terms</title>
+<style>
+:root{color-scheme:dark;--bg:#100d18;--surface:#191522;--surface2:#231d30;--line:#393047;--text:#f8f5ff;--muted:#b7afc6;--purple:#b99aff;--pink:#ff86b7;--green:#a7f3d0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--purple);outline-offset:3px}a{color:inherit;text-decoration:none}.wrap{width:min(1200px,100% - 36px);margin:auto}.top{position:sticky;top:0;z-index:8;background:#100d18ed;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}.nav{height:72px;display:flex;align-items:center;gap:26px}.brand{font-size:23px;font-weight:950;letter-spacing:-1px;white-space:nowrap}.brand b{color:var(--pink)}.brand small{display:block;font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:700;margin-top:-6px}.navlinks{display:flex;gap:19px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}.searchbox{margin-left:auto;display:flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:0 12px;border-radius:12px;max-width:300px;width:100%}.searchbox input{background:transparent;border:0;outline:0;color:var(--text);width:100%;padding:11px 0}.iconbtn,.secondary{background:var(--surface2);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:10px 13px}.hero{margin:26px 0 30px;min-height:350px;border-radius:24px;overflow:hidden;position:relative;display:flex;align-items:center;padding:clamp(24px,5vw,58px);background:radial-gradient(ellipse at 82% 20%,#8855c9 0,transparent 32%),radial-gradient(ellipse at 90% 110%,#b64e89 0,transparent 35%),linear-gradient(112deg,#28203b,#191526 58%,#3c2448)}.hero:after{content:"✦";position:absolute;right:10%;top:4%;font-size:clamp(150px,24vw,290px);color:#fff1;transform:rotate(12deg);pointer-events:none}.hero-copy{max-width:600px;position:relative;z-index:1}.eyebrow{color:#dfccff;text-transform:uppercase;font-size:11px;font-weight:850;letter-spacing:2.5px}.hero h1{font-size:clamp(38px,6vw,68px);line-height:.99;letter-spacing:-3px;margin:13px 0 17px}.hero h1 span{color:var(--pink)}.hero p{color:#ddd4e9;max-width:490px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.primary{background:linear-gradient(100deg,#c7a8ff,#ff9fc6);color:#20152b;border:0;border-radius:12px;padding:12px 17px;font-weight:850}.section{margin:30px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:15px}.section-head h2{font-size:22px;letter-spacing:-.6px;margin:0}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}.textbtn{background:none;border:0;color:var(--purple);padding:5px}.chips{display:flex;gap:8px;overflow:auto;padding:2px 0 10px}.chip{white-space:nowrap;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:8px 13px;border-radius:999px}.chip.active{background:#3b2a57;border-color:#8e6bc5;color:#f1e7ff}.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:17px}.card{min-width:0;cursor:pointer;position:relative}.poster{aspect-ratio:3/4;border-radius:16px;overflow:hidden;position:relative;isolation:isolate;display:flex;align-items:end;padding:13px;background:linear-gradient(150deg,var(--a),var(--b));border:1px solid #ffffff12;transition:transform .18s,border-color .18s}.card:hover .poster{transform:translateY(-4px);border-color:#c3a3ff99}.poster:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 70% 25%,#ffffff55,transparent 26%),linear-gradient(0deg,#0b0815e8,transparent 70%)}.poster .glyph{position:absolute;right:7px;top:3px;font-size:clamp(56px,7vw,88px);opacity:.63;text-shadow:0 6px 20px #0003}.poster .poster-title{font-weight:950;font-size:clamp(17px,2.2vw,24px);line-height:1.05;letter-spacing:-.7px;max-width:95%;text-shadow:0 2px 12px #0008}.poster .ribbon{position:absolute;left:9px;top:9px;border-radius:6px;background:#100d18a8;border:1px solid #ffffff45;padding:4px 7px;font-size:9px;font-weight:850;letter-spacing:.7px}.heart{position:absolute;right:8px;top:8px;border:1px solid #ffffff55;background:#100d18b5;color:white;border-radius:50%;width:33px;height:33px;z-index:2}.meta{padding:10px 2px}.meta strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:14px}.meta small{color:var(--muted);font-size:12px}.meta .subline{display:flex;justify-content:space-between;gap:5px;margin-top:4px}.pill{font-size:10px;color:var(--green);background:#1a493b88;border-radius:5px;padding:2px 5px}.empty{grid-column:1/-1;text-align:center;background:var(--surface);border:1px dashed var(--line);border-radius:15px;padding:28px;color:var(--muted)}.continue{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:14px;border-radius:16px}.continue-art{width:72px;aspect-ratio:3/4;border-radius:9px;flex-shrink:0;background:linear-gradient(150deg,#7b5ab7,#c65f8c);display:grid;place-items:center;font-size:29px}.continue-copy{flex:1;min-width:0}.continue-copy strong{display:block}.continue-copy small{color:var(--muted)}.progress{height:4px;background:#40384e;border-radius:9px;margin-top:9px;overflow:hidden}.progress span{display:block;height:100%;width:38%;background:var(--pink)}.ad-note{border:1px dashed #4b405e;border-radius:15px;padding:17px 20px;color:var(--muted);display:flex;align-items:center;gap:14px}.ad-note strong{color:var(--text)}.ad-note .admark{border:1px solid var(--line);padding:7px 10px;border-radius:8px;font-size:10px;letter-spacing:1px}.footer{border-top:1px solid var(--line);padding:25px 0 35px;margin-top:45px;color:var(--muted);font-size:12px}.footer strong{color:var(--text)}.modal{display:none;position:fixed;inset:0;background:#05040bd9;z-index:20;align-items:center;justify-content:center;padding:16px}.modal.open{display:flex}.dialog{width:min(690px,100%);max-height:92vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:21px;padding:20px}.dialog-head{display:flex;justify-content:space-between;align-items:start;gap:12px}.dialog h2{margin:0;font-size:26px}.muted{color:var(--muted)}.player{margin-top:15px;aspect-ratio:16/9;border-radius:15px;background:radial-gradient(ellipse at 50% 30%,#543d78,#17121f 68%);display:grid;place-items:center;text-align:center;padding:18px}.play{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#ffffff20;border:1px solid #ffffff70;font-size:25px;margin:0 auto 8px}.dialog-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.notice{font-size:12px;color:var(--muted);margin-top:14px}.toast{position:fixed;z-index:30;bottom:18px;left:50%;transform:translateX(-50%);display:none;background:#f4eaff;color:#21142d;padding:11px 17px;border-radius:12px;font-weight:800;box-shadow:0 8px 35px #0008;max-width:calc(100% - 28px)}.toast.show{display:block}.settings{display:flex;align-items:center;gap:8px}.settings select{background:var(--surface);color:var(--text);border:1px solid var(--line);padding:9px;border-radius:10px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.navlinks{display:none}}@media(max-width:650px){.wrap{width:calc(100% - 26px)}.nav{height:64px;gap:11px}.brand{font-size:19px}.brand small{font-size:8px}.searchbox{max-width:none;flex:1}.searchbox input{min-width:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.hero{min-height:320px;padding:24px 21px}.hero h1{letter-spacing:-2px}.section-head h2{font-size:19px}.settings{display:none}.continue{padding:11px}.poster .glyph{font-size:65px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.verified-card{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:16px;background:var(--surface);border:1px solid #6e5890;border-radius:18px;align-items:center}
+.verified-poster{min-height:170px;border-radius:13px;display:grid;place-items:center;background:radial-gradient(circle at 60% 25%,#c4a1f8,transparent 26%),linear-gradient(145deg,#45316d,#a75c93);font-size:64px}
+.verified-card h3{font-size:21px;margin:7px 0}.verified-card p{color:var(--muted);font-size:13px;margin:7px 0 12px}
+.license-pill{display:inline-flex;border-radius:999px;padding:5px 9px;background:#173c31;color:#a7f3d0;font-size:10px;font-weight:850}
+.official-actions{display:flex;flex-wrap:wrap;gap:9px}
+.official-actions a{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:12px;font-weight:800}
+.official-actions a:first-child{background:#d5baff;color:#21152d;border-color:transparent}
+.real-player{width:100%;height:100%;min-height:230px;border:0;border-radius:14px;background:#08070c}
+.attribution{border-left:3px solid var(--purple);padding:10px 12px;background:#211a2d;border-radius:0 9px 9px 0;font-size:12px;color:var(--muted)}
+@media(max-width:600px){.verified-card{grid-template-columns:1fr}.verified-poster{min-height:115px}.real-player{min-height:200px}}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="brand" href="#" aria-label="OtakuFlix home">otaku<b>flix</b><small>ANIME, ON YOUR TERMS</small></a>
+<nav class="navlinks"><a href="#verified-watch">Watch</a><a href="#discover">Discover</a><a href="#launch-plan">Launch plan</a><a href="#mylist">My List</a></nav>
+<label class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search anime…" aria-label="Search anime titles"></label>
+<button class="iconbtn" id="myListTop" title="My List" aria-label="Go to My List">♡</button>
+</div></header>
+<main class="wrap">
+<section class="hero"><div class="hero-copy"><div class="eyebrow">A universe of stories</div><h1>Your next anime<br>obsession is <span>here.</span></h1><p>Discover new worlds, unforgettable characters, and your next favourite series. Start with free-to-watch, creator-approved anime.</p><div class="actions"><button class="primary" id="browseBtn">Explore anime&nbsp; ↗</button><button class="secondary" id="randomBtn">✦ Surprise me</button></div></div></section>
+
+
+<section class="section" id="verified-watch">
+  <div class="section-head">
+    <div><h2>Watch a rights-checked short</h2><p>Our first real title, published by its creator.</p></div>
+    <span class="license-pill">CC BY 4.0</span>
+  </div>
+  <article class="verified-card">
+    <div class="verified-poster" aria-hidden="true">✦</div>
+    <div>
+      <div class="eyebrow">INDEPENDENT ANIMATION · 2018</div>
+      <h3>The Deadline</h3>
+      <p>Animated short by Tamara Khudyakova, published by Morevna Project. The publisher states that this short is released under Creative Commons Attribution 4.0, which permits redistribution and commercial reuse when attribution requirements are followed. The official page is the source of truth for the work and its licence.</p>
+      <div class="official-actions">
+        <a href="https://peertube.touhoppai.moe/videos/watch/d9579a01-a9b8-4bda-8c52-487f08068c71" target="_blank" rel="noopener noreferrer">Watch official video ↗</a>
+        <a href="https://morevnaproject.org/2018/08/05/the-deadline-animated-short-released/" target="_blank" rel="noopener noreferrer">Licence &amp; attribution ↗</a>
+      </div>
+    </div>
+  </article>
+  <p class="notice">For this first version, the watch button opens the creator's official player. We are not copying the video onto OtakuFlix. If we later host a copy, we must preserve the original licence information and provide clear attribution; any third-party music or other included material must also be checked.</p>
+</section>
+
+<section class="section" id="legal-sources">
+  <div class="section-head">
+    <div><h2>Legal watch &amp; open anime</h2><p>Starter sources we can point viewers to while we verify reuse permissions.</p></div>
+    <span class="muted" style="font-size:12px">Rights checked title-by-title</span>
+  </div>
+  <div class="legal-grid">
+    <article class="legal-card">
+      <div class="legal-art" style="--a:#734d9e;--b:#bd709d">✦</div>
+      <div class="legal-body">
+        <span class="legal-tag">CC BY 4.0 · Attribution required</span>
+        <h3>The Deadline</h3>
+        <p>Independent animated short from Morevna Project. The publisher states that this short is under CC BY 4.0. Credit is required. The first version links to the official player rather than rehosting the file.</p>
+        <a class="legal-link" href="https://morevnaproject.org/shorts/deadline/" target="_blank" rel="noopener noreferrer">Official film page ↗</a>
+      </div>
+    </article>
+    <article class="legal-card">
+      <div class="legal-art" style="--a:#225d77;--b:#6d9eaf">月</div>
+      <div class="legal-body">
+        <span class="legal-tag">Open anime project · check each work</span>
+        <h3>Morevna Project</h3>
+        <p>An independent anime-style project that publishes works and source files under Creative Commons licences. Different titles and music can have different terms.</p>
+        <a class="legal-link" href="https://morevnaproject.org/" target="_blank" rel="noopener noreferrer">Explore official project ↗</a>
+      </div>
+    </article>
+    <article class="legal-card">
+      <div class="legal-art" style="--a:#c06a4d;--b:#e4ad68">▶</div>
+      <div class="legal-body">
+        <span class="legal-tag">Official licensed streaming</span>
+        <h3>Muse India</h3>
+        <p>Free anime on its official YouTube channel in India. Link viewers to the official releases; do not copy, download, or rehost episodes without separate permission.</p>
+        <a class="legal-link" href="https://www.youtube.com/@MuseIndiaChannel" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+      </div>
+    </article>
+    <article class="legal-card">
+      <div class="legal-art" style="--a:#4d4d9e;--b:#a66ec4">ア</div>
+      <div class="legal-body">
+        <span class="legal-tag">Official licensed streaming</span>
+        <h3>Ani-One India</h3>
+        <p>Another official anime channel for Indian viewers. Availability changes by title and time; use the official watch destination rather than mirroring its videos.</p>
+        <a class="legal-link" href="https://www.youtube.com/@AniOneIN" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+      </div>
+    </article>
+  </div>
+  <p class="notice">Important: a free official stream is not permission to rehost or offer downloads. OtakuFlix will only host files when the licence or written permission clearly allows it. For now, these links take viewers to the original publishers.</p>
+</section>
+<style>
+.legal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.legal-card{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;padding:12px;min-width:0}
+.legal-art{width:88px;min-width:88px;min-height:118px;border-radius:11px;background:linear-gradient(145deg,var(--a),var(--b));display:grid;place-items:center;font-size:38px;color:#fff;text-shadow:0 3px 15px #0005}
+.legal-body{min-width:0}.legal-body h3{margin:6px 0;font-size:17px}.legal-body p{margin:0 0 10px;color:var(--muted);font-size:12px;line-height:1.5}
+.legal-tag{display:inline-block;color:var(--green);font-size:10px;font-weight:800;letter-spacing:.2px}
+.legal-link{color:var(--purple);font-size:12px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:650px){.legal-grid{grid-template-columns:1fr}.legal-art{width:76px;min-width:76px;min-height:110px}}
+</style>
+
+<section class="section" id="continueSection" hidden><div class="section-head"><div><h2>Pick up where you left off</h2><p>Your recent activity on this device</p></div><button class="textbtn" id="clearProgress">Clear</button></div><div id="continueCard"></div></section>
+<section class="section" id="discover"><div class="section-head"><div><h2>Explore anime</h2><p>Choose a mood. Find a new world.</p></div><span id="count" class="muted" style="font-size:12px"></span></div>
+<div class="chips" id="filters"><button class="chip active" data-filter="All">All anime</button><button class="chip" data-filter="Popular">Popular</button><button class="chip" data-filter="Action">Action</button><button class="chip" data-filter="Fantasy">Fantasy</button><button class="chip" data-filter="Comedy">Comedy</button><button class="chip" data-filter="Sci-Fi">Sci-Fi</button><button class="chip" data-filter="Free">Free to watch</button></div>
+<div class="grid" id="catalog"></div></section>
+<section class="section" id="popular"><div class="section-head"><div><h2>Made for your watchlist</h2><p>Save a title and it will stay on this device.</p></div><button class="textbtn" id="seeList">View My List →</button></div><div class="grid" id="recommendations"></div></section>
+<section class="section" id="mylist"><div class="section-head"><div><h2>My List <span style="color:var(--pink)">♡</span></h2><p>Your saved anime, all in one place.</p></div></div><div class="grid" id="savedGrid"></div></section>
+
+<section class="section" id="launch-plan">
+  <div class="section-head"><div><h2>OtakuFlix launch checklist</h2><p>What is done, and what still needs a real service or account.</p></div></div>
+  <div class="legal-grid">
+    <article class="legal-card"><div class="legal-art" style="--a:#246d56;--b:#69b49a">✓</div><div class="legal-body"><span class="legal-tag">DONE IN THIS PROTOTYPE</span><h3>Discovery site</h3><p>Responsive layout, search, genre filters, favourites, and a first rights-checked title linking to its publisher.</p></div></article>
+    <article class="legal-card"><div class="legal-art" style="--a:#70509c;--b:#ba80d0">↗</div><div class="legal-body"><span class="legal-tag">NEXT</span><h3>Publish the website</h3><p>Upload this HTML to a static hosting provider, test on phones and desktop, and connect a domain if desired. A real hosting account is required.</p></div></article>
+    <article class="legal-card"><div class="legal-art" style="--a:#8a6234;--b:#d5a65f">▣</div><div class="legal-body"><span class="legal-tag">REQUIRES RIGHTS</span><h3>More titles &amp; downloads</h3><p>Add each title only after checking the licence for the video, soundtrack, subtitles, and artwork. Add download buttons only for authorized files.</p></div></article>
+    <article class="legal-card"><div class="legal-art" style="--a:#32617c;--b:#77a9c4">◎</div><div class="legal-body"><span class="legal-tag">AFTER LAUNCH</span><h3>Ads &amp; streaming</h3><p>Ad networks and video hosting require account approval, policy compliance, and suitable rights. For a minor, a parent or guardian may need to manage account and payment setup.</p></div></article>
+  </div>
+</section>
+
+<section class="section"><div class="ad-note"><span class="admark">AD SPACE</span><div><strong>Free to watch, supported by optional ads</strong><br><span>Ad placement is a placeholder. Add a compliant ad provider only after your site and content meet its policies.</span></div></div></section>
+<footer class="footer"><strong>OtakuFlix</strong> · Anime discovery prototype<br><br>The discovery catalogue still contains fictional demo entries; The Deadline is the first real, rights-checked short and is linked from its official publisher rather than rehosted. Before launch, add videos you own, have permission to distribute, or that are verified public domain. Availability and public-domain status can vary by country. Never promise downloads of content without the rights holder's permission.</footer>
+</main>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="dialog"><div class="dialog-head"><div><div class="eyebrow" id="detailKicker">ANIME SERIES</div><h2 id="detailTitle">Title</h2><div class="muted" id="detailMeta"></div></div><button class="iconbtn" id="closeModal" aria-label="Close details">✕</button></div><div class="player" id="player"><div><div class="play">▶</div><strong>Episode player placeholder</strong><div class="muted" style="font-size:12px">A licensed video source is needed for playback.</div></div></div><p id="detailDesc" class="muted"></p><div class="dialog-actions"><button class="primary" id="watchBtn">▶ Mark as started</button><button class="secondary" id="saveBtn">♡ Add to My List</button><button class="secondary" id="downloadBtn">↓ Download info</button></div><p class="notice">This prototype does not download or stream real episodes. In the production app, connect a licensed HLS/MP4 source and expose downloads only when explicitly permitted by the rights holder.</p></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const anime=[
+{id:1,title:"Moonlit Guardians",year:2025,genres:["Fantasy","Action"],episodes:12,rating:"8.7",popular:true,free:true,glyph:"☾",a:"#56428f",b:"#b65f9c",desc:"A band of young guardians discovers an ancient power that wakes only beneath a violet moon. Fictional sample title for the prototype."},
+{id:2,title:"Neon Afterglow",year:2024,genres:["Sci-Fi","Action"],episodes:24,rating:"8.4",popular:true,free:true,glyph:"✦",a:"#175c83",b:"#8b4d9d",desc:"In a city powered by memories, one courier finds a signal no one else can hear. Fictional sample title."},
+{id:3,title:"Snack Time Heroes",year:2025,genres:["Comedy"],episodes:10,rating:"8.1",popular:false,free:true,glyph:"★",a:"#b86d43",b:"#e1a46b",desc:"The world's most chaotic heroes have one weakness: an empty lunchbox. Fictional sample title."},
+{id:4,title:"The Emerald Archive",year:2023,genres:["Fantasy","Mystery"],episodes:18,rating:"9.0",popular:true,free:true,glyph:"❋",a:"#216e5a",b:"#a2a950",desc:"A quiet apprentice catalogues books that rewrite themselves when nobody is watching. Fictional sample title."},
+{id:5,title:"Orbit 9",year:2024,genres:["Sci-Fi"],episodes:13,rating:"8.3",popular:false,free:false,glyph:"◎",a:"#294e9b",b:"#4a8db5",desc:"A research crew at the edge of known space receives a transmission dated thirty years in the future. Fictional sample title."},
+{id:6,title:"Paper Crane Club",year:2022,genres:["Comedy","Drama"],episodes:12,rating:"8.2",popular:false,free:true,glyph:"折",a:"#b26b86",b:"#e5b4c7",desc:"Five classmates make a thousand paper cranes and accidentally start a school-wide tradition. Fictional sample title."},
+{id:7,title:"Ashen Crown",year:2025,genres:["Action","Fantasy"],episodes:20,rating:"8.8",popular:true,free:true,glyph:"♛",a:"#743d4b",b:"#d17c58",desc:"A reluctant heir sets out to restore a kingdom by learning the stories its history erased. Fictional sample title."},
+{id:8,title:"Tiny Planet Café",year:2023,genres:["Sci-Fi","Comedy"],episodes:16,rating:"8.0",popular:false,free:true,glyph:"☕",a:"#5a5692",b:"#c77d9d",desc:"A café floating between planets serves drinks, advice, and the occasional interstellar mystery. Fictional sample title."},
+{id:9,title:"Winter Lanterns",year:2021,genres:["Drama","Fantasy"],episodes:11,rating:"8.6",popular:false,free:true,glyph:"❄",a:"#426a9a",b:"#b4c5e0",desc:"A village lantern festival helps its residents remember the people and moments that shaped them. Fictional sample title."},
+{id:10,title:"Turbo Comet",year:2024,genres:["Action","Sci-Fi"],episodes:22,rating:"8.5",popular:true,free:false,glyph:"➶",a:"#a34855",b:"#e8a34b",desc:"A rookie pilot enters a galaxy-spanning race with a ship that seems to have a mind of its own. Fictional sample title."}
+];
+let filter="All",query="",current=null;
+const read=(key,fall)=>{try{return JSON.parse(localStorage.getItem(key))??fall}catch{return fall}};
+let saved=new Set(read("otakuflix_anime_saved",[])), progress=read("otakuflix_anime_progress",[]);
+const $=id=>document.getElementById(id);
+function card(t){return `<article class="card" tabindex="0" role="button" aria-label="Open ${t.title}" data-open="${t.id}"><div class="poster" style="--a:${t.a};--b:${t.b}"><span class="glyph" aria-hidden="true">${t.glyph}</span><span class="ribbon">${t.free?"FREE TO WATCH":"SOURCE NEEDED"}</span><button class="heart" data-save="${t.id}" aria-label="${saved.has(t.id)?"Remove":"Add"} ${t.title} ${saved.has(t.id)?"from":"to"} My List">${saved.has(t.id)?"♥":"♡"}</button><div class="poster-title">${t.title}</div></div><div class="meta"><strong>${t.title}</strong><div class="subline"><small>${t.year} · ${t.episodes} eps</small><small>★ ${t.rating}</small></div></div></article>`}
+function matches(t){return (!query||t.title.toLowerCase().includes(query.toLowerCase())||t.genres.some(g=>g.toLowerCase().includes(query.toLowerCase())))&&(filter==="All"||(filter==="Popular"?t.popular:filter==="Free"?t.free:t.genres.includes(filter)))}
+function render(){let list=anime.filter(matches);$("catalog").innerHTML=list.length?list.map(card).join(""):'<div class="empty">No anime found. Try another title or genre.</div>';$("count").textContent=list.length+" titles";let rec=anime.filter(t=>t.popular).slice(0,4);$("recommendations").innerHTML=rec.map(card).join("");let fav=anime.filter(t=>saved.has(t.id));$("savedGrid").innerHTML=fav.length?fav.map(card).join(""):'<div class="empty">Your list is empty. Tap ♡ on any title to save it here.</div>';renderProgress()}
+function renderProgress(){if(!progress.length){$("continueSection").hidden=true;return}$("continueSection").hidden=false;let t=anime.find(x=>x.id===progress[0]);if(!t){progress=[];$("continueSection").hidden=true;return}$("continueCard").innerHTML=`<div class="continue"><div class="continue-art">${t.glyph}</div><div class="continue-copy"><strong>${t.title}</strong><small>Episode 1 · Demo progress</small><div class="progress"><span></span></div></div><button class="secondary" data-open="${t.id}">Resume</button></div>`}
+function toast(msg){let el=$("toast");el.textContent=msg;el.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove("show"),2400)}
+function openDetail(id){current=anime.find(t=>t.id===Number(id));if(!current)return;$("detailTitle").textContent=current.title;$("detailMeta").textContent=`${current.year} · ${current.episodes} episodes · ★ ${current.rating} · ${current.genres.join(" / ")}`;$("detailDesc").textContent=current.desc;$("detailKicker").textContent=current.free?"FREE-TO-WATCH DEMO LISTING":"CONTENT SOURCE NOT CONNECTED";$("saveBtn").textContent=saved.has(current.id)?"♥ Remove from My List":"♡ Add to My List";$("modal").classList.add("open");$("closeModal").focus()}
+function toggleSaved(id){id=Number(id);if(saved.has(id))saved.delete(id);else saved.add(id);localStorage.setItem("otakuflix_anime_saved",JSON.stringify([...saved]));render();if(current&&current.id===id)$("saveBtn").textContent=saved.has(id)?"♥ Remove from My List":"♡ Add to My List";toast(saved.has(id)?"Added to My List":"Removed from My List")}
+document.addEventListener("click",e=>{let save=e.target.closest("[data-save]");if(save){e.stopPropagation();toggleSaved(save.dataset.save);return}let open=e.target.closest("[data-open]");if(open){openDetail(open.dataset.open);return}let f=e.target.closest("[data-filter]");if(f){filter=f.dataset.filter;document.querySelectorAll(".chip").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));render()}});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches(".card")){e.preventDefault();openDetail(e.target.dataset.open)}if(e.key==="Escape")$("modal").classList.remove("open")});
+$("search").addEventListener("input",e=>{query=e.target.value;render()});
+$("browseBtn").onclick=()=>$("discover").scrollIntoView({behavior:"smooth"});
+$("myListTop").onclick=$("seeList").onclick=()=>$("mylist").scrollIntoView({behavior:"smooth"});
+document.querySelectorAll("[data-jump-filter]").forEach(a=>a.onclick=()=>{filter="Popular";document.querySelectorAll(".chip").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));render()});
+$("randomBtn").onclick=()=>openDetail(anime[Math.floor(Math.random()*anime.length)].id);
+$("closeModal").onclick=()=>$("modal").classList.remove("open");
+$("modal").onclick=e=>{if(e.target===$("modal"))$("modal").classList.remove("open")};
+$("saveBtn").onclick=()=>current&&toggleSaved(current.id);
+$("watchBtn").onclick=()=>{if(!current)return;progress=[current.id,...progress.filter(id=>id!==current.id)];localStorage.setItem("otakuflix_anime_progress",JSON.stringify(progress));$("modal").classList.remove("open");render();toast("Added to your continue-watching section")};
+$("downloadBtn").onclick=()=>toast("Downloads can be enabled after an authorized file is connected.");
+$("clearProgress").onclick=()=>{progress=[];localStorage.removeItem("otakuflix_anime_progress");render();toast("Viewing progress cleared")};
+render();
+</script>
+</body></html>
